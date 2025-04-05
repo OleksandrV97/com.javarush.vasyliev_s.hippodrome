@@ -5,6 +5,7 @@ import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
+
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.verify;
 
@@ -25,17 +26,19 @@ public class HippodromeTest {
     }
 
     @Test
-    public void move() {
+    public void move(){
         List<Horse> horses = new ArrayList<>();
         for (int i = 0; i < 50; i++) {
             horses.add(mock(Horse.class));
         }
-        new Hippodrome(horses).move();
+        new  Hippodrome(horses).move();
 
         for (Horse horse : horses) {
             verify(horse).move();
         }
     }
+
+
 
     @Test
     public void getWinner() {
